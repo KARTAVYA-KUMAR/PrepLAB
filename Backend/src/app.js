@@ -8,7 +8,8 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin: (origin, callback) => {
-        if (!origin || /^http:\/\/localhost:\d+$/.test(origin)) {
+        const allowedOrigins = [process.env.FRONTEND_URL].filter(Boolean);
+        if (!origin || allowedOrigins.includes(origin) || /^http:\/\/localhost:\d+$/.test(origin)) {
             return callback(null, true);
         }
         return callback(new Error("Not allowed by CORS"));
