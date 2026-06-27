@@ -2,11 +2,13 @@ import React,{useState} from 'react'
 import { useNavigate, Link } from 'react-router'
 import "../auth.form.scss"
 import { useAuth } from '../hooks/useAuth'
+import { useMouseTail } from '../../../hooks/useMouseTail'
 
 const Login = () => {
 
     const { loading, handleLogin } = useAuth()
     const navigate = useNavigate()
+    const handleMouseMove = useMouseTail()
 
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
@@ -23,7 +25,7 @@ const Login = () => {
 
 
     return (
-        <main>
+        <main onMouseMove={handleMouseMove}>
             <div className="form-container">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>

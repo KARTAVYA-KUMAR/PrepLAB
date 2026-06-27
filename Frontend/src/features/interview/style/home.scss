@@ -1,18 +1,18 @@
 // ── Variables ────────────────────────────────────────────────────────────────
-$bg-page:        #0d1117;
-$bg-card:        #161b22;
-$bg-panel:       #1c2230;
-$bg-input:       #1e2535;
-$border-color:   #2a3348;
-$text-primary:   #e6edf3;
-$text-muted:     #7d8590;
-$accent:         #ff2d78;
-$accent-alt:     #ff6b9d;
+$bg-page:        #ededed;
+$bg-card:        #ffffff;
+$bg-panel:       #fcfcfc;
+$bg-input:       #f5f5f5;
+$border-color:   #dcdcdc;
+$text-primary:   #0c0c0c;
+$text-muted:     #555555;
+$accent:         #000000;
+$accent-alt:     #222222;
 $badge-required: #ff2d78;
-$badge-best:     #ff2d78;
-$info-bg:        #1b2a4a;
-$info-border:    #2d4a7a;
-$font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$badge-best:     #2f9e44;
+$info-bg:        #e9f5fe;
+$info-border:    #b3dbff;
+$font-stack:     'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
 // ── Page Shell ───────────────────────────────────────────────────────────────
 .home-page {
@@ -286,7 +286,7 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
     p {
         margin: 0;
         font-size: 0.8rem;
-        color: #8ab4f8;
+        color: #1a4f8b;
         line-height: 1.5;
 
         strong {
@@ -370,4 +370,43 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
             color: $text-primary;
         }
     }
+}
+
+// ── Rolling Loader ────────────────────────────────────────────────────────────
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f6f6f3;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.loader {
+    width: 100%;
+    height: 72px;
+    overflow: hidden;
+    transform: translateY(-80px);
+}
+
+.text-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.word {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    color: #111;
+    white-space: nowrap;
 }

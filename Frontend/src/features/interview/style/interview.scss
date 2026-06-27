@@ -1,18 +1,18 @@
 // ── Shared Variables (mirrors home.scss theme) ────────────────────────────────
-$bg-page: #0d1117;
-$bg-card: #161b22;
-$bg-panel: #1c2230;
-$bg-input: #1e2535;
-$border-color: #2a3348;
-$text-primary: #e6edf3;
-$text-muted: #7d8590;
-$accent: #ff2d78;
-$font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$bg-page: #ededed;
+$bg-card: #ffffff;
+$bg-panel: #fcfcfc;
+$bg-input: #f5f5f5;
+$border-color: #dcdcdc;
+$text-primary: #0c0c0c;
+$text-muted: #555555;
+$accent: #000000;
+$font-stack: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
 // severity palette
-$severity-high: #ff4d4d;
-$severity-medium: #f5a623;
-$severity-low: #3fb950;
+$severity-high: #c92a2a;
+$severity-medium: #e67e22;
+$severity-low: #2b8a3e;
 
 *::-webkit-scrollbar {
     display: none;
@@ -21,7 +21,8 @@ $severity-low: #3fb950;
 // ── Page Shell ────────────────────────────────────────────────────────────────
 .interview-page {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     background-color: $bg-page;
     color: $text-primary;
     font-family: $font-stack;
@@ -41,6 +42,8 @@ $severity-low: #3fb950;
     border: 1px solid $border-color;
     border-radius: 1rem;
     justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
 }
 
 .interview-divider {
@@ -116,7 +119,8 @@ $severity-low: #3fb950;
     padding: 1.75rem 2rem;
     overflow-y: auto;
     min-height: initial;
-    max-height: calc(100vh - 3rem);
+    height: 100%;
+    max-height: 100%;
     padding-bottom: 5rem;
     align-items: flex-start;
 
