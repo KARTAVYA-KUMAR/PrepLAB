@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = [process.env.FRONTEND_URL].filter(Boolean);
+        const allowedOrigins = [process.env.FRONTEND_URL, "https://prep-lab-cyan.vercel.app"].filter(Boolean);
         if (!origin || allowedOrigins.includes(origin) || /^http:\/\/localhost:\d+$/.test(origin)) {
             return callback(null, true);
         }

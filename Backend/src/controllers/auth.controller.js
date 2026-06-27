@@ -42,7 +42,7 @@ async function registerUserController(req, res) {
         { expiresIn: "1d" }
     )
 
-    const isProduction = process.env.NODE_ENV === "production" || !!process.env.FRONTEND_URL;
+    const isProduction = process.env.NODE_ENV === "production" || !!process.env.FRONTEND_URL || (req.headers.origin && !req.headers.origin.includes("localhost"));
     const cookieOptions = {
         httpOnly: true,
         secure: isProduction,
@@ -96,7 +96,7 @@ async function loginUserController(req, res) {
         { expiresIn: "1d" }
     )
 
-    const isProduction = process.env.NODE_ENV === "production" || !!process.env.FRONTEND_URL;
+    const isProduction = process.env.NODE_ENV === "production" || !!process.env.FRONTEND_URL || (req.headers.origin && !req.headers.origin.includes("localhost"));
     const cookieOptions = {
         httpOnly: true,
         secure: isProduction,
@@ -128,7 +128,7 @@ async function logoutUserController(req, res) {
         await tokenBlacklistModel.create({ token })
     }
 
-    const isProduction = process.env.NODE_ENV === "production" || !!process.env.FRONTEND_URL;
+    const isProduction = process.env.NODE_ENV === "production" || !!process.env.FRONTEND_URL || (req.headers.origin && !req.headers.origin.includes("localhost"));
     res.clearCookie("token", {
         httpOnly: true,
         secure: isProduction,
