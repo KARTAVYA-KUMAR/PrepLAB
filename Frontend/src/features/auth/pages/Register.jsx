@@ -11,13 +11,19 @@ const Register = () => {
     const [ username, setUsername ] = useState("")
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
+    const [ error, setError ] = useState("")
 
     const {loading,handleRegister} = useAuth()
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await handleRegister({username,email,password})
-        navigate("/")
+        setError("")
+        try {
+            await handleRegister({username,email,password})
+            navigate("/")
+        } catch (err) {
+            setError(err.response?.data?.message || "Failed to register account. Please check your inputs.")
+        }
     }
 
     if(loading){
@@ -28,7 +34,7 @@ const Register = () => {
         <main onMouseMove={handleMouseMove}>
             <div className="form-container">
                 <h1>Register</h1>
-
+                {error && <div className="error-message">{error}</div>}
                 <form onSubmit={handleSubmit}>
 
                     <div className="input-group">
