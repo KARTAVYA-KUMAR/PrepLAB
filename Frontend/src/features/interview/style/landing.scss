@@ -521,17 +521,23 @@
     }
 
     .landing-footer {
-        padding: 40px 24px;
-        gap: 24px;
+        padding: 60px 24px 40px 24px;
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .footer-brand {
-            font-size: 18vw;
+            font-size: 16vw;
+            order: 2;
         }
 
         .footer-links {
+            position: static;
             flex-direction: column;
             align-items: center;
             gap: 16px;
+            order: 1;
         }
     }
 }
