@@ -305,6 +305,31 @@
 @media (max-width: 768px) {
     .landing-header {
         padding: 20px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .auth-links {
+            display: none;
+        }
+
+        .menu-pill-wrapper {
+            position: static;
+            transform: none;
+            top: auto;
+            left: auto;
+
+            .menu {
+                width: 140px;
+                
+                &.open {
+                    position: absolute;
+                    top: 20px;
+                    right: 24px;
+                    width: 280px;
+                }
+            }
+        }
     }
 
     .bottom-left-cta {
