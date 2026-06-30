@@ -17,6 +17,8 @@ export const useMouseTail = () => {
     ];
 
     const handleMouseMove = (e) => {
+        if (e.target.closest('.form-container')) return;
+
         const dx = e.clientX - lastCoords.current.x;
         const dy = e.clientY - lastCoords.current.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
